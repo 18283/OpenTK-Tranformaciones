@@ -61,29 +61,6 @@ namespace ConsoleApp1
 
         }
 
-        //function calcularCentro()
-        //{
-        //    si la lista es vacia, retorna 0,0,0
-
-
-        //    sumX = 0
-        //    sumY = 0
-        //    sumZ = 0
-        //    iteramos la lista de poligonos
-        //        centroPoligono = Poligono.getCentro()
-        //        sumX = sumX + centroPoligono.X
-        //        lo misma en Y
-        //        lo mismo en Z
-        //   terminamos de iterar
-        //   promedioX = sumX / listaPoligonos.Count()
-        //   lo mismo para Y
-        //   lo mismo para Z
-
-        //    retornamos promedioX, proY, proZ
-
-
-        //}
-
         public void trasladar(float trasladarX, float trasladarY, float trasladarZ)
         {
             
@@ -98,6 +75,7 @@ namespace ConsoleApp1
 
             foreach (var punto in listaDePoligono)
             {
+                punto.Value.SetCentro(centro);
                 punto.Value.escalar(valorDeEscalar);
             }
         }

@@ -15,14 +15,17 @@ namespace ConsoleApp1
 {
     public class Game: GameWindow
     {
-        private Parte parte1;
+        //private Parte parte1;
         //private Poligono frente;
-
+        //private Objeto objeto1;
+        private Escenario escenario1;
 
         public Game(int width, int height, string title) : base(width, height, GraphicsMode.Default, title)
         {
-            parte1 = new Parte();
+            //parte1 = new Parte();
             //frente = new Poligono();    
+            //objeto1 = new Objeto();
+            escenario1 = new Escenario();
 
         }
 
@@ -129,18 +132,32 @@ namespace ConsoleApp1
             derecha2.AnadirPunto("P3", h1);
             derecha2.AnadirPunto("P4", i1);
 
-            //Parte parte1 = new Parte();
+            Parte parte1 = new Parte();
             parte1.AnadirPoligono("c1", frente);
             parte1.AnadirPoligono("c2", atras);
             parte1.AnadirPoligono("c3", izquierda);
             parte1.AnadirPoligono("c4", derecha);
 
+            Parte parte2 = new Parte();
+            parte2.AnadirPoligono("c1", frente2);
+            parte2.AnadirPoligono("c2", atras2);
+            parte2.AnadirPoligono("c3", izquierda2);
+            parte2.AnadirPoligono("c4", derecha2);
+
+            Objeto objeto1 = new Objeto();
+            objeto1.AnadirParte("Parte1", parte1);
+            objeto1.AnadirParte("Parte2", parte2);
+
+            escenario1.AnadirObjeto("Objeto1", objeto1);
 
 
             //frente.Dibujar();
             //frente.trasladar(0.02f, 0.0f, 0.0f);
             //frente.escalar(1.9f); //aqui
             //parte1.escalar(1.9f);
+            //objeto1.escalar(1.9f);
+            //Console.WriteLine();
+            escenario1.escalar(1.9f);
         }
 
         protected override void OnRenderFrame(FrameEventArgs e)
@@ -158,11 +175,18 @@ namespace ConsoleApp1
             //Console.WriteLine(frente.GetCentro().ToString());
 
             //parte.Dibujar();
-            parte1.Dibujar();
-            parte1.rotar(1, 1, 0);
+            //parte1.Dibujar();
+            //parte1.rotar(1, 1, 0);
             //parte1.trasladar(0.001f, 0f, 0f);
-            Console.WriteLine(parte1.GetCentro().ToString());
+            //Console.WriteLine(parte1.GetCentro().ToString());
 
+            //objeto1.Dibujar();
+            //objeto1.rotar(0,1,0);
+            //objeto1.trasladar(0.001f, 0f, 0f);
+
+            escenario1.Dibujar();
+            //escenario1.rotar(0, 1, 0);
+            //escenario1.trasladar(0.001f, 0f, 0f);
 
 
             Context.SwapBuffers();

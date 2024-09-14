@@ -45,7 +45,6 @@
             float radx = (float)(Math.PI * angulox / 180.0f);
             float rady = (float)(Math.PI * anguloy / 180.0f);
             float radz = (float)(Math.PI * anguloz / 180.0f);
-
             float cosx = (float)Math.Cos(radx);
             float sinx = (float)Math.Sin(radx);
             float cosy = (float)Math.Cos(rady);
